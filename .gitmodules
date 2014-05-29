@@ -1,0 +1,12 @@
+[submodule "setup/modules/python"]
+	path = setup/modules/python
+	url = https://github.com/stankevich/puppet-python.git
+[submodule "setup/modules/postgresql"]
+	path = setup/modules/postgresql
+	url = https://github.com/puppetlabs/puppetlabs-postgresql
+[submodule "setup/modules/concat"]
+	path = setup/modules/concat
+	url = https://github.com/puppetlabs/puppetlabs-concat
+[submodule "setup/modules/stdlib"]
+	path = setup/modules/stdlib
+	url = https://github.com/puppetlabs/puppetlabs-stdlib
