@@ -32,6 +32,6 @@ $ ./manage.py runserver
 
 
   [1]: http://www.virtualbox.org/wiki/Downloads
-  [2]: www.vagrantup.com/downloads.html
-  [3]: git-scm.com/download
-  [4]: git-scm.com/download/linux
+  [2]: http://www.vagrantup.com/downloads.html
+  [3]: http://git-scm.com/download
+  [4]: http://git-scm.com/download/linux
