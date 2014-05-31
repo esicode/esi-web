@@ -3,7 +3,7 @@ Installing the development environment
 Requirements
 ------------
 ###VirtualBox
-[Use this download link][4] (4.3.12 or later)
+[Use this download link][1] (4.3.12 or later)
 ###Vagrant
 [Use this download link][2] (1.6.3 or later)
 ###Git
