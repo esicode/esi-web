@@ -1,49 +1,48 @@
-**Instalando el ambiente de desarrollo**
-------------------------------------
+﻿Instalando el ambiente de desarrollo
+====================================
+Programas necesarios:
+---------------------
+###VirtualBox 
+[Use este enlace para descargarlo][1]  (Versión 4.3.12 en adelante)
+###Vagrant
+[Use este enlace para descargarlo][2] (Versión 1.6.3 en adelante)
+###Git
+####En Windows
+[Use este enlace para descargarlo][3] (Versión 1.9.3 en adelante)
+####En Linux
+Lea instrucciones de instalación [aquí][4].
+###PuTTY (Solo en Windows)
+[Use este enlace para descargarlo][5]
 
-**Programas necesarios:**
-
- - VirtualBox
- - Vagrant
- - Git
-
-**Pasos necesiarios para empezar:**
-```
+Obteniendo el código del proyecto
+---------------------------------
+Abrir una consola y moverse con el comando `cd` hasta la carpeta donde se
+desee clonar. Luego ejecutar los siguientes comandos.
+```bash
 git clone http://github.com/esicode/esi-web
-git submodule init
-git submodule update
 cd esi-web
-vagrant up
-vagrant ssh
-./manage.py syncdb
-./manage.py runserver
-
-```
-Clone el repositorio:
-```
-git clone http://github.com/esicode/esi-web
-
-```
-Inicie y actualice los submódulos de Git
-```
 git submodule init
 git submodule update
 ```
-Inicie Vagrant
+Iniciando y probando el servidor web
+------------------------------------
+Es necesario descargar e iniciar la máquina. Utilice este comando.
+```bash
+$ vagrant up
 ```
-vagrant up
-```
+Ahora se puede ingresar a la máquina y probar el servidor.
+> Si está utilizando Windows deberá abrir el PuTTY e ingresar los datos que le solicita (los encontrará en la consola misma).
 
-Conéctese a la máquina virtual
-
-```
+Al generar la base de datos por primera vez, `syncdb` le ofrecerá crear un superusuario. Se debe indicar un nombre de usuario, correo electrónico y contraseña válidos para luego acceder a la administración del sitio.
+```bash
 vagrant ssh
-```
-Es necesaria la actualización de las bases de datos de Django.
-```
 ./manage.py syncdb
-```
-Y por último inicie el servidor Django.
-```
 ./manage.py runserver
 ```
+
+
+  [1]: http://www.virtualbox.org/wiki/Downloads
+  [2]: http://www.vagrantup.com/downloads.html
+  [3]: http://git-scm.com/download
+  [4]: http://git-scm.com/download/linux
+  [5]: http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe
