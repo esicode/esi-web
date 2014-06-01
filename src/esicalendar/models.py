@@ -62,3 +62,18 @@ class Event(models.Model):
 
     def __unicode__(self):
         return '%s %s %s' % (self.subjectgroup, self.date, self.start)
+
+
+class Absence(models.Model):
+    teacher = models.ForeignKey(User)
+    start = models.DateTimeField()
+    end = models.DateTimeField()
+    message = models.CharField(max_length=200)
+    visible = models.BooleanField(default=False)
+
+    def __unicode__(self):
+        return '%s desde %s hasta %s' % (self.teacher,
+                                         self.start.strftime(
+                                             '%d de %b de %Y (%l:%M%p)'),
+                                         self.end.strftime(
+                                             '%d de %b de %Y (%l:%M%p)'))
