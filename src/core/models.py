@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import Group
 
+
 class Subject(models.Model):
     name = models.CharField(max_length=30)
 
@@ -26,4 +27,4 @@ class SubjectGroup(models.Model):
     hours = models.IntegerField(default=1)
 
     def __unicode__(self):
-        return '%s %s' % (self.subject, self.group)
+        return u'%s %s' % (self.subject, self.group)

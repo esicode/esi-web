@@ -1,3 +1,8 @@
 from django.contrib import admin
+from core.models import Subject
+from core.models import SubjectGroup
+from core.models import User
 
-# Register your models here.
+admin.site.register(Subject)
+admin.site.register(SubjectGroup)
+admin.site.register(User)
