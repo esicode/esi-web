@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json
 
 # from django.shortcuts import render
@@ -35,6 +36,14 @@ class UserAPIView(JSONResponseMixin, View):
             'short_name': user.get_short_name()
         })
 
+class UserPrivateAPIView(JSONResponseMixin, View):
+    def get(self, context, pk):
+        user = User.objects.get(pk=pk)
+        return self.render_to_response({
+            'username': user.username,
+            'idnumber': user.idnumber,
+            'email': user.email
+        })
 
 class GroupAPIView(JSONResponseMixin, View):
     def get(self, context, pk):
