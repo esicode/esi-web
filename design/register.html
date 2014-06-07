@@ -4,16 +4,12 @@
 	<meta charset="utf-8">
 	<title>Escuela Superior de Inform&aacute;tica</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<!-- Bootstrap core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<!-- Bootstrap theme -->
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	<!-- Theme -->
 	<link href="css/theme.min.css" rel="stylesheet">
 	<link rel="shortcut icon" href="img/fav.ico" />
 </head>
 <body>
-<!-- Fixed navbar -->
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
@@ -84,8 +80,16 @@
 	<div class="well bloque-reg">
 		<form action="#" method="post" role="form">
 			<div class="form-group">
-				<label for="name">Nombre</label>
-				<input type="text" class="form-control" id="name" name="name" placeholder="Nombre completo" required>
+				<table width="100%">
+					<tr>
+						<td style="padding-right: 15px"><label for="name">Nombre</label></td>
+						<td><label for="lastname">Apellido</label></td>
+					</tr>
+					<tr>
+						<td style="padding-right: 15px"><input type="text" class="form-control" id="name" name="name" required></td>
+						<td><input type="text" class="form-control" id="lastname" name="lastname" required></td>
+					</tr>
+				</table>
 			</div>
 			<div class="form-group">
 				<label for="usuario">Nombre de usuario</label>
@@ -121,7 +125,6 @@
 		</form>
     </div>
 </div> <!-- /container -->
-<!-- JAVASCRIPT -->
 <script src="js/check.min.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

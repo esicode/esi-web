@@ -29,10 +29,35 @@ input[type=number]::-webkit-outer-spin-button {
 	color: #555;
 	margin: 15px 0 0 0;
 }
+.valign {
+	vertical-align: middle !important;
+}
+.navbar-imgUser {
+	width: 20px;
+	height: 20px;
+}
+.right-drpdw {
+	padding: 15px 15px 14px !important;
+}
+.right-drpdw img {
+	border: 1px solid rgba(0, 0, 0, .3);
+	margin-top: -2px;
+}
+.drpdwR {
+	min-width: 200px;
+}
 @media (min-width:768px) {
 	.bloque-reg {
 		max-width: 700px;
 		margin: 15px auto;
+	}
+}
+@media (min-width:992px) {
+	.dias-collapse.collapse {
+		display: none !important;
+	}
+	.dias-collapse {
+		display: none !important;
 	}
 }
 @media (max-width:767px) {
@@ -44,5 +69,10 @@ input[type=number]::-webkit-outer-spin-button {
 		border:1px solid #e3e3e3;
 		margin: 0 -15px 15px;
 		width: 100%;
+	}
+}
+@media (max-width:992px) {
+	.tableDays {
+		display: none;
 	}
 }
