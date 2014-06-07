@@ -6,7 +6,7 @@ from django import http
 from django.views.generic.base import View
 from django.contrib.auth.models import Group
 
-from esicalendar.models import User
+from core.models import User
 
 
 class JSONResponseMixin(object):
@@ -42,6 +42,8 @@ class UserPrivateAPIView(JSONResponseMixin, View):
         return self.render_to_response({
             'username': user.username,
             'idnumber': user.idnumber,
+            'telephone': user.telephone,
+            'cellphone': user.cellphone,
             'email': user.email
         })
 
