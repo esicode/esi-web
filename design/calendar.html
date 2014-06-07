@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Escuela Superior de Inform&aacute;tica</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/theme.min.css" rel="stylesheet">
+	<link rel="shortcut icon" href="img/fav.ico" />
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-bar">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<button type="button" style="height: 34px; padding-top: 7px" class="navbar-toggle" data-toggle="collapse" data-target=".dias-collapse"><span>Cambiar dia</span></button>
+			<a href="index.html"><img src="img/logoESI.png" width="106" height="45" class="navbar-logo" /></a>
+		</div>
+		<!-- Menu dias responsive -->
+		<div class="navbar-collapse collapse dias-collapse">
+			<ul class="nav navbar-nav">
+				<li data-toggle="collapse" data-target=".dias-collapse" class="active"><a href="#lun" data-toggle="tab">Lunes</a></li>
+				<li data-toggle="collapse" data-target=".dias-collapse"><a href="#mar" data-toggle="tab">Martes</a></li>
+				<li data-toggle="collapse" data-target=".dias-collapse"><a href="#mie" data-toggle="tab">Miércoles</a></li>
+				<li data-toggle="collapse" data-target=".dias-collapse"><a href="#jue" data-toggle="tab">Jueves</a></li>
+				<li data-toggle="collapse" data-target=".dias-collapse"><a href="#vie" data-toggle="tab">Viernes</a></li>
+			</ul>
+		</div>
+		<div class="navbar-collapse collapse navbar-bar">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="index.html">Inicio</a></li>
+				<li><a href="#">Publicaciones</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Carreras <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">EMT Inform&aacute;tica</a></li>
+						<li><a href="#">Tecnicatura Redes y Software</a></li>
+						<li><a href="#">Operador PC</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Bedel&iacute;as <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Inasistencias Docentes</a></li>
+						<li><a href="#">Fechas Examen</a></li>
+						<li><a href="#">Propuestas de Examen</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Sitios de Int&eacute;res</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Descargas <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Recursos</a></li>
+						<li><a href="#">Material de Docentes</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Moodle</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle right-drpdw" data-toggle="dropdown">NombreUsuario <img src="img/user.jpg" class="img-rounded navbar-imgUser"> <b class="caret"></b></a>
+					<ul class="dropdown-menu drpdwR">
+						<li><a href="#">Perfil</a></li>
+						<li><a href="#">Configuración</a></li>
+						<li class="divider"></li>
+						<li><a href="index.html">Salir</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</div>
+
+<div class="container">
+	<!-- Menu dias desktop -->
+	<ul class="nav nav-tabs nav-justified tableDays">
+		<li class="active"><a href="#lun" data-toggle="tab">Lunes</a></li>
+		<li><a href="#mar" data-toggle="tab">Martes</a></li>
+		<li><a href="#mie" data-toggle="tab">Miércoles</a></li>
+		<li><a href="#jue" data-toggle="tab">Jueves</a></li>
+		<li><a href="#vie" data-toggle="tab">Viernes</a></li>
+	</ul>
+	<div class="tab-content">
+		<div class="tab-pane fade in active" id="lun">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th width="20">#</th>
+						<th width="110">Hora</th>
+						<th>Materia</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>13:10 - 13:55</td>
+						<td>Materia 1</td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>13:55 - 14:40</td>
+						<td>Materia 2</td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>14:40 - 15:25</td>
+						<td>Materia 3</td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>15:25 - 16:10</td>
+						<td>Materia 4</td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<td>16:25 - 17:10</td>
+						<td>Materia 5</td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<td>17:10 - 17:55</td>
+						<td>Materia 6</td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<td>17:55 - 18:40</td>
+						<td>Materia 7</td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<td>18:40 - 19:25</td>
+						<td>Materia 8</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="tab-pane fade" id="mar">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th width="20">#</th>
+						<th width="110">Hora</th>
+						<th>Materia</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>13:10 - 13:55</td>
+						<td>Materia 1</td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>13:55 - 14:40</td>
+						<td>Materia 2</td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>14:40 - 15:25</td>
+						<td>Materia 3</td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>15:25 - 16:10</td>
+						<td>Materia 4</td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<td>16:25 - 17:10</td>
+						<td>Materia 5</td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<td>17:10 - 17:55</td>
+						<td>Materia 6</td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<td>17:55 - 18:40</td>
+						<td>Materia 7</td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<td>18:40 - 19:25</td>
+						<td>Materia 8</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="tab-pane fade" id="mie">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th width="20">#</th>
+						<th width="110">Hora</th>
+						<th>Materia</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>13:10 - 13:55</td>
+						<td>Materia 1</td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>13:55 - 14:40</td>
+						<td>Materia 2</td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>14:40 - 15:25</td>
+						<td>Materia 3</td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>15:25 - 16:10</td>
+						<td>Materia 4</td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<td>16:25 - 17:10</td>
+						<td>Materia 5</td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<td>17:10 - 17:55</td>
+						<td>Materia 6</td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<td>17:55 - 18:40</td>
+						<td>Materia 7</td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<td>18:40 - 19:25</td>
+						<td>Materia 8</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="tab-pane fade" id="jue">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th width="20">#</th>
+						<th width="110">Hora</th>
+						<th>Materia</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>13:10 - 13:55</td>
+						<td>Materia 1</td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>13:55 - 14:40</td>
+						<td>Materia 2</td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>14:40 - 15:25</td>
+						<td>Materia 3</td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>15:25 - 16:10</td>
+						<td>Materia 4</td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<td>16:25 - 17:10</td>
+						<td>Materia 5</td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<td>17:10 - 17:55</td>
+						<td>Materia 6</td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<td>17:55 - 18:40</td>
+						<td>Materia 7</td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<td>18:40 - 19:25</td>
+						<td>Materia 8</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="tab-pane fade" id="vie">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th width="20">#</th>
+						<th width="110">Hora</th>
+						<th>Materia</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>13:10 - 13:55</td>
+						<td>Materia 1</td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>13:55 - 14:40</td>
+						<td>Materia 2</td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>14:40 - 15:25</td>
+						<td>Materia 3</td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>15:25 - 16:10</td>
+						<td>Materia 4</td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<td>16:25 - 17:10</td>
+						<td>Materia 5</td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<td>17:10 - 17:55</td>
+						<td>Materia 6</td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<td>17:55 - 18:40</td>
+						<td>Materia 7</td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<td>18:40 - 19:25</td>
+						<td>Materia 8</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div> <!-- /container -->
+<script src="js/check.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
