@@ -25,7 +25,7 @@ class User(AbstractUser):
                 'username': self.username}
 
     def __unicode__(self):
-        return self.get_full_name()
+        return self.get_full_name() or self.username
 
 
 class JoinGroupRequest(models.Model):
