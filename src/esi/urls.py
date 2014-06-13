@@ -15,6 +15,7 @@ from core.views import GroupSubjectsAPIView
 from core.views import UserAPIView
 from core.views import UserGroupsAPIView
 from core.views import UserPrivateAPIView
+from core.views import SignUpAPIView
 
 urlpatterns = patterns('',
     url(r'^$', HomeView.as_view()),
@@ -29,4 +30,5 @@ urlpatterns = patterns('',
     url(r'^api/users/(?P<username>\w+)/groups',
         csrf_exempt(UserGroupsAPIView.as_view())),
     url(r'^api/users/(?P<username>\w+)', csrf_exempt(UserAPIView.as_view())),
+    url(r'^api/signup', csrf_exempt(SignUpAPIView.as_view()))
 )
