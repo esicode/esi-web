@@ -27,34 +27,46 @@ class JSONResponseMixin(object):
         "Convert the context dictionary into a JSON object"
         return json.dumps(context)
 
+    def api_get(self, *args, **kwargs):
+        raise NotImplementedError()
+
+    def api_post(self, *args, **kwargs):
+        raise NotImplementedError()
+
+    def get(self, *args, **kwargs):
+        return self.render_to_response(self.api_get(*args, **kwargs))
+
+    def post(self, *args, **kwargs):
+        return self.render_to_response(self.api_post(*args, **kwargs))
+
 
 class GroupAPIView(JSONResponseMixin, View):
-    def get(self, context, pk):
+    def api_get(self, context, pk):
         group = Group.objects.get(pk=pk)
-        return self.render_to_response({
+        return {
             'name': group.name,
             'members': [
                 {'name': user.get_full_name(), 'username': user.username}
                 for user in User.objects.filter(groups=group)
             ]
-        })
+        }
 
 
 class GroupSubjectsAPIView(JSONResponseMixin, View):
-    def get(self, context, pk):
+    def api_get(self, context, pk):
         group = Group.objects.get(pk=pk)
-        return self.render_to_response([
+        return [
             subjectgroup.get_info()
             for subjectgroup in SubjectGroup.objects.filter(group=group)
-        ])
+        ]
 
 
 class GroupListAPIView(JSONResponseMixin, View):
-    def get(self, context):
+    def api_get(self, context):
         groups = [{'name': group.name, 'pk': group.pk,
                    'members': len(User.objects.filter(groups=group))}
                   for group in Group.objects.all()]
-        return self.render_to_response(groups)
+        return groups
 
 
 class HomeView(TemplateView):
@@ -66,18 +78,18 @@ class SignUpView(TemplateView):
 
 
 class UserAPIView(JSONResponseMixin, View):
-    def get(self, context, username):
+    def api_get(self, context, username):
         user = User.objects.get(username=username)
-        return self.render_to_response({
+        return {
             'full_name': user.get_full_name(),
             'first_name': user.first_name,
             'last_name': user.last_name,
             'short_name': user.get_short_name()
-        })
+        }
 
 
 class UserGroupsAPIView(JSONResponseMixin, View):
-    def get(self, context, username):
+    def api_get(self, context, username):
         user = User.objects.get(username=username)
         return self.render_to_response({
             'student': [
@@ -92,7 +104,7 @@ class UserGroupsAPIView(JSONResponseMixin, View):
 
 
 class UserPrivateAPIView(JSONResponseMixin, View):
-    def get(self, context, username):
+    def api_get(self, context, username):
         user = User.objects.get(username=username)
         return self.render_to_response({
             'idnumber': user.idnumber,
@@ -101,16 +113,27 @@ class UserPrivateAPIView(JSONResponseMixin, View):
             'email': user.email
         })
 
+
 class SignUpAPIView(JSONResponseMixin, View):
-    def post(self, context):
-        print self.request.POST
+    def validate(self, context):
+        return {
+            'user': True,
+            'email': True,
+            'firstname': True
+        }
+
+    def save(self, context):
         User.objects.create_user(self.request.POST['user'],
-				 self.request.POST['email'],
+                                 self.request.POST['email'],
                                  first_name=self.request.POST['firstname'],
                                  last_name=self.request.POST['lastname'],
                                  password=self.request.POST['password1'],
                                  idnumber=self.request.POST['idnumber'],
                                  telephone=self.request.POST['telephone'],
-				 cellphone=self.request.POST['cellphone'])
-        return JSONResponseMixin.render_to_response(
-            self, {'data': str(self.request.POST)})
+                                 cellphone=self.request.POST['cellphone'])
+
+    def api_post(self, context):
+        validation = self.validate(context)
+        if reduce(lambda x, y: x and validation[y], validation, True):
+            self.save(context)
+        return validation

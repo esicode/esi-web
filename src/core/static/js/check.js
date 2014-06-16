@@ -17,25 +17,40 @@ function validationCI(input) {
 	}
 }
 
+var fields = {
+  'firstname': $('#name'),
+  'lastname': $('#lastname'),
+  'user': $('#usuario'),
+  'idnumber': $('#ci'),
+  'email': $('#emailaddr'),
+  'telephone': $('#tel'),
+  'cellphone': $('#cel'),
+  'password1': $('#password1'),
+  'password2': $('#password2'),
+}
+
 $(document).ready(function () {
   $('#btnsignup').click(function (){
-    var _form = {
-      'firstname': $('#name').val(),
-      'lastname': $('#lastname').val(),
-      'user': $('#usuario').val(),
-      'idnumber': $('#ci').val(), 
-      'email': $('#emailaddr').val(),
-      'telephone': $('#tel').val(),
-      'cellphone': $('#cel').val(),
-      'password1': $('#password1').val(),
-      'password2': $('#password2').val() 
-      }
-    console.log(JSON.stringify(_form));
+    var _form = {}
+    Object.keys(fields).forEach(function (field) {
+      _form[field] = fields[field].val();
+    });
     $.ajax({
       type: 'POST',
       url: '/api/signup',
-      data: _form
+      data: _form,
+      success: function(data){
+        var sucess = true;
+	      Object.keys(data).forEach(function (key) {
+			    if (!data[key]) {
+			      sucess = false;
+			      fields[key].setCustomValidity('Datos inválidos');
+			    }
+		    });
+		    if (sucess) {
+			    window.location.href = '/';
+		    }
+      }
     });
-    console.log(_form);
-  })
-})
+  });
+});
